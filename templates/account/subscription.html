@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<head>
+  <style>
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  .tab button.active {
+    background-color: #ccc;
+  }
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  .header{
+    padding: 30px;
+    text-align: center;
+    background: inherit;
+    color: darkslategray;
+    font-size: 15px;
+  }
+  .column{
+    padding: 30px;
+    float: left;
+    width: 50%;
+  }
+  .row:after{
+    content: "";
+    display: table;
+    clear: both;
+  } 
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+  <script>
+    function openPlan(evt, planName, planID) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(planName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    function setUpButtons(evt) {
+      var name_id_dictionary = {
+        "individual-button-container": "P-4L0495479D8354113L4OJ22I",
+	"family-button-container": "P-4HU55234G4861720SL4OJ5CY",
+	"classroom-button-container": "P-0DV41933MU8994936L4OJ6EY",
+	"school-button-container": "P-05R81727K2887514NL4OKATA"
+      }
+      for (var key in name_id_dictionary) {
+        renderButton(key, name_id_dictionary[key] );
+      }
+    }
+    function renderButton(buttonName, planID) {
+      var poundSymbol = '#';
+      paypal.Buttons({
+        createSubscription: function(data, actions) {
+          return actions.subscription.create({
+            'plan_id': planID // Creates the subscription
+          });
+        },
+        onApprove: function(data, actions) {
+          alert('You have successfully created subscription ' + data.subscriptionID); // Optional message given to subscriber
+        }
+      }).render(poundSymbol.concat(buttonName) ); // Renders the PayPal button  
+    }
+  </script>
+  <div class="header">
+    <h3>Select the payment plan that's right for you!</h3>
+  </div>
+</head>
+
+
+<div class="tab"> 
+  <button class="tablinks" onclick="openPlan(event, 'Individual', 0)">Individual Payment Plan</button>
+  <button class="tablinks" onclick="openPlan(event, 'Family', 0)">Family Payment Plan</button>
+  <button class="tablinks" onclick="openPlan(event, 'Classroom', 0)">Classroom Payment Plan</button>
+  <button class="tablinks" onclick="openPlan(event, 'School', 0)">School Payment Plan</button> 
+</div>
+
+
+<body onload="setUpButtons(event)">
+  <script src="https://www.paypal.com/sdk/js?client-id=AQ5LkjACDb_gFmctaQfyezKuF9VU4Xaf2Xi6SwA-kQPjepcdfWU9INC82teLTJzSGIVQDk7UUbNhyGEC&vault=true"></script>
+  
+  <div id = 'Individual' class="tabcontent">  
+    <div class="row">
+
+      <div class="column">
+        <strong>Individual Payment Plan</strong>
+	<p>This payment plan gives you access to all the fun modules that JumpAhead offers for only $10 a month!</p>
+      </div>
+
+      <div class="column" id="individual-button-container"></div>
+    </div>
+  </div>
+
+  <div id = "Family" class="tabcontent">
+    <div class="row">
+
+      <div class="column">
+        <strong>Family Payment Plan</strong>
+	<p>This payment plan is perfect for families. This gives you access to 10 subscriptions for only 75$ a month!</p>
+      </div>
+
+      <div class="column" id="family-button-container"></div>
+    </div>
+  </div>
+
+  <div id = "Classroom" class="tabcontent">
+    <div class="row">
+
+      <div class="column">
+        <strong>Classroom Payment Plan</strong>
+	<p>This is the ideal subscription for classrooms; It provides access to 35 subscriptions for only $250 a month</p>
+      </div>
+
+      <div class="column" id="classroom-button-container"></div>
+
+    </div>
+  </div>
+
+  <div id = "School" class="tabcontent">
+    <div class="row">
+
+      <div class="column">
+	<strong>School Payment Plan</strong>
+	<p>This is the optimal subscription for schools; This provides 200 subscriptions for only $800 a month</p>
+      </div>
+
+      <div class="column" id="school-button-container"></div>
+    </div>
+  </div>
+<!-- Footer Section 1 -->
+<section class="footer-section" style="padding-top: 700px;">
+  <div class="container">
+    <div class="footer-bar-wrapper">
+      <div class="row align-items-center text-center">
+        <div class="col-lg-2 col-md-3 ">
+          <div class="footer-icon">
+            <img src="{% static 'smoothjumpaheadsticker.png' %}" alt="" style="border-radius: 20%;">
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6  offset-lg-1">
+          <ul class="nav footer-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'about' %}">About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 ">
+          <div class="footer-icon">
+            <img src="{% static 'smoothjumpaheadsticker.png' %}" alt="" style="margin-left: 100px; border-radius: 20%;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</body>
+
+{% endblock %}

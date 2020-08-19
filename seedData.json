@@ -1,0 +1,110 @@
+[
+    {
+        "model": "modules.course",
+        "pk": 3,
+        "fields": {
+            "title": "Course 1 : Hello World!",
+            "description": "A description"
+        }
+    },
+    {
+        "model": "modules.course",
+        "pk": 4,
+        "fields": {
+            "title": "Course 2: Random Course",
+            "description": "Sample Description"
+        }
+    },
+    {
+        "model": "modules.module",
+        "pk": 3,
+        "fields": {
+            "video_link": "https://www.youtube.com/watch?v=yfgsklK_yFo",
+            "title": "Module 1: Test!",
+            "created": "2020-02-24T19:17:13.510Z",
+            "last_updated": "2020-02-24T19:17:13.510Z",
+            "description": "Here is a description",
+            "course": 3
+        }
+    },
+    {
+        "model": "modules.module",
+        "pk": 4,
+        "fields": {
+            "video_link": "https://www.youtube.com/watch?v=Q-BpqyOT3a8",
+            "title": "Module 2: another test",
+            "created": "2020-02-24T19:18:01.419Z",
+            "last_updated": "2020-02-24T19:18:01.419Z",
+            "description": "description time",
+            "course": 4
+        }
+    },
+    {
+        "model": "modules.module",
+        "pk": 5,
+        "fields": {
+            "video_link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "title": "Module 3: Sample module",
+            "created": "2020-02-24T19:19:11.663Z",
+            "last_updated": "2020-02-24T19:19:11.663Z",
+            "description": "never going to give you up....",
+            "course": 3
+        }
+    },
+    {
+        "model": "modules.task",
+        "pk": 3,
+        "fields": {
+            "module": 3,
+            "description": "Task 1 - a description 1"
+        }
+    },
+    {
+        "model": "modules.task",
+        "pk": 4,
+        "fields": {
+            "module": 3,
+            "description": "Task 2 Description 2"
+        }
+    },
+    {
+        "model": "modules.task",
+        "pk": 5,
+        "fields": {
+            "module": 4,
+            "description": "I am excited"
+        }
+    },
+    {
+        "model": "modules.task",
+        "pk": 6,
+        "fields": {
+            "module": 5,
+            "description": "Hello this is django"
+        }
+    },
+    {
+        "model": "modules.task",
+        "pk": 7,
+        "fields": {
+            "module": 4,
+            "description": "this is not a description actually it is"
+        }
+    },
+    {
+        "model": "modules.task",
+        "pk": 8,
+        "fields": {
+            "module": 4,
+            "description": "Sample description for a module"
+        }
+    },
+    {
+        "model": "modules.task",
+        "pk": 9,
+        "fields": {
+            "module": 4,
+            "description": "Module 4 task description"
+        }
+    }
+]

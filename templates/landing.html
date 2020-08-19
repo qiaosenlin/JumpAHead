@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+<section class="hero-area">
+    <div class="hero-shape">
+        <img src="{% static 'site_pics/landing-3-shape.png' %}" style="max-height: 800px; width: 100%;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 order-md-2 order-lg-1">
+                <div class="hero-image">
+                    <img src="{% static 'carolina_jumprope.jpg' %}" alt="" style="border-radius: 10%;">
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1 col-md-6 order-md-1 order-lg-2">
+                <div class="hero-left-content">
+                    <h1 style="text-align: center;">Jump Ahead</h1>
+                    <p style="font-size: x-large; text-align: center;">Making wellness accessible through interactive jump rope and nutrition activities.</p>
+                    <div class="hero-btns"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container"></div>
+<!-- About starts -->
+
+<section class="about-section-01">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xl-5 offset-xl-1 order-1 order-md-2">
+                    <div class="about-image-01">
+                        <img src="{% static 'gather.JPG'%}" alt="" style="border-radius: 10%;">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-xl-5 order-2 order-md-1">
+                    <div class="about-content">
+                        <h2>What is Jump Ahead</h2>
+                        <p>The Jump Ahead Online Program harnesses the unique, engaging spirit of jump rope in combination with nutritious snacks
+                        to promote healthy behaviors in youth. Originally an in-person after-school program, the team created this website to
+                        deliver their snack and jump rope activities virtually.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about-section-02">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="row">
+                <div class="col-lg-6 order-lg-1 col-md-6 col-xl-6">
+                    <div class="about-image-02">
+                        <img src="{% static 'help.JPG'%}" alt="" style="border-radius: 10%;">
+                    </div>
+                </div>
+
+                <div class="col-lg-5 order-lg-2 col-md-6 col-xl-5 offset-xl-1">
+                    <div class="about-content">
+                        <h2>How does it work?</h2>
+                        <p>Each activity is organized into a module, containing video demonstrations, written instructions, and a checklist to
+                        track progress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about-section-03">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xl-5 offset-xl-1 order-1 order-md-2">
+                    <div class="about-image-03">
+                        <img src="{% static 'kids2.JPG'%}" alt="" style="border-radius: 10%;">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-xl-5 order-2 order-md-1">
+                    <div class="about-content">
+                        <h2>Who is Jump Ahead meant for?</h2>
+                        <p>While we focus our activities on elementary school-aged youth, those of all ages can benefit from taking part in Jump
+                        Ahead. We strongly encourage classes, schools, or families to enroll as a group to engage in friendly competition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-section-02">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="row">
+                <div class="col-lg-6 order-lg-1 col-md-6 col-xl-6">
+                    <div class="about-image-02">
+                        <img src="{% static 'mentor2.JPG'%}" alt="" style="border-radius: 10%; padding-left: 20px; margin-top: 50px;" width="100%">
+                    </div>
+                </div>
+
+                <div class="col-lg-5 order-lg-2 col-md-6 col-xl-5 offset-xl-1">
+                    <div class="about-content">
+                        <h2>Why should I join the online program?</h2>
+                        <p>In addition to having access to expertly-designed activities, proceeds from the
+                        online program will fund our in-person program that we offer to schools pro-bono.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA section -->
+
+
+
+<!-- Footer Section 1 -->
+<section class="footer-section">
+    <div class="container">
+        <div class="footer-bar-wrapper">
+            <div class="row align-items-center text-center">
+                <div class="col-lg-2 col-md-3 ">
+                    <div class="footer-icon">
+                        <img src="{% static 'smoothjumpaheadsticker.png' %}" alt="" style="border-radius: 20%;">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6  offset-lg-1">
+                    <ul class="nav footer-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'about' %}">About </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4 ">
+                    <div class="footer-icon">
+                        <img src="{% static 'smoothjumpaheadsticker.png' %}" alt="" style="margin-left: 100px; border-radius: 20%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

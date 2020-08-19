@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+<style>
+    .contact-us {
+        margin: 66px auto 44px;
+        text-align: center;
+        margin-bottom: 22px;
+    }
+    .content {
+        width: 80%;
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    p {
+        font-size: 12px;
+    }
+</style>
+<!-- Footer Section 1 -->
+<section class="content contact-us">
+    <element class="container-fluid">
+        <div class="background-image "></div>
+        <div class="container">
+            <h1 class="text-center panel-transparent">
+                <h4 class="text-white">Contact us</h4>
+                <a class="text-white" target="_blank" href="mailto: jumpaheadafterschool@gmail.com">jumpaheadafterschool@gmail.com</a>
+            </h1>
+            <img class="marginauto" src="{% static 'team.jpg' %}" />
+        </div>
+        </div>
+</section>
+{% endblock %}

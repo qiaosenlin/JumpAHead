@@ -1,0 +1,76 @@
+a {
+    outline: 0;
+}
+
+.larger-font {
+    font-size: 2.8em !important;
+}
+ 
+.bg-primary {
+    background-color: rgb(92, 200, 142) !important;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.user-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+img {
+    float: left;
+    max-width: 100%;
+    vertical-align: top;
+    border-style: none;
+}
+
+.modal-header {
+    background-color:  rgb(92, 200, 142);
+    color: white; 
+    height: 200%;
+}
+
+.btn-primary {
+    background-color: rgb(92, 200, 142);
+    border-color: rgb(92, 200, 142);
+}
+
+.btn-primary:hover {
+    background-color: rgb(88, 184, 132);
+}
+.btn-primary:active {
+    background-color: rgb(88, 184, 132);
+}
+.btn-primary:visited {
+    background-color: rgb(88, 184, 132);
+}
+
+.background-image {
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    margin-top: -110px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -5;
+    display: block;
+    background-image: url(team.jpg);
+    width: 15000px;
+    height: 1000px;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+

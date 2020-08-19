@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<div class="gray py-5 row" style="margin-top: 50px;">
+	<div class="offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+    {% if user.name %}
+    <h4>{{user.name}}</h4>
+    <h5>@{{user.username}}</h4>
+
+    {% else %}
+    <h4>@{{user.username}}</h4>
+    {% endif %}
+
+    <p>{{user.email}}</p>
+    
+    <h1>Account Preferences</h1>
+
+    <div class="my-4">
+        <h2>Subscription</h2>
+        <h4>Status: {% if user.active_subscription %} <span class="badge badge-success">Active</span> {% else %} <span class="badge badge-danger">No subscription</span> {% endif %}</h4>
+
+        {% if user.active_subscription %} 
+        <p>Started on {{ user.subscription_start_date }} and ends on {{ user.subscription_end_date }}</p>
+        
+        
+        {% else %}{% endif %}
+	<a href="{% url 'subscription' %}" class="btn" color="DimGray">Manage Subscription</a>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-dark"type="submit">Save</button>
+    </form>
+</div>
+</div>
+<!-- Footer Section 1 -->
+<section class="footer-section" style="padding-top: 700px;">
+    <div class="container">
+        <div class="footer-bar-wrapper">
+            <div class="row align-items-center text-center">
+                <div class="col-lg-2 col-md-3 ">
+                    <div class="footer-icon">
+                        <img src="{% static 'smoothjumpaheadsticker.png' %}" alt="" style="border-radius: 20%;">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6  offset-lg-1">
+                    <ul class="nav footer-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'about' %}">About </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4 ">
+                    <div class="footer-icon">
+                        <img src="{% static 'smoothjumpaheadsticker.png' %}" alt=""
+                            style="margin-left: 100px; border-radius: 20%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
